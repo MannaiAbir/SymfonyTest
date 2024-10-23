@@ -1,0 +1,24 @@
+{{ form(rechercheForm) }}
+
+
+
+<table border="3">
+
+    <tr>
+        <td>Name</td>
+        <td>Description</td>
+        <td>Qate de validation</td>
+        <th>Action</th>
+        
+    </tr>
+    {% for m in markettab %}
+    <tr>
+        <td>{{m.description}}</td>
+        <td>{{ m.Description }}</td>
+        <td>{{ m.ValideDate | date('Y-m-d') }}</td>
+        <td><a href="{{ path('app_editmarket', { 'id': m.id }) }}">Update</a></td>
+        
+     </tr>
+        
+    {% endfor %}
+    </table>
